@@ -11,15 +11,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+    --border-radius-select: 10px;
+    --border-radius-input-button: 10px;
+
+    --textfield-primary-bg: #e8f0fe;
+    --textfield-primary-border: #010309;
+    --textfield-primary-label: rgba(0, 0, 0, 0.89);
+    --text-error-active: #af2626;
+
+
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Tema oscuro */
+[data-theme="dark"] {
+    --textfield-primary-bg: #333;
+    --textfield-primary-border: #999;
+    --textfield-primary-label: #fff;
+    --text-error-active: #ff5252;
 }
 
 body {
@@ -75,7 +89,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #0b0e4c;
 }
 button:focus,
 button:focus-visible {

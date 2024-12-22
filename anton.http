@@ -1,0 +1,18 @@
+### GET request to example server
+GET {{base_url}}/service
+
+### UP service
+POST {{base_url}}/service/lightner_back?image={{image}}&tag={{tag}}&iport={{iport}}&eport={{eport}}&privileged=0
+Content-Type: application/json
+
+{
+    "DB_URL": "{{db_url}}",
+    "DB_USERNAME": "{{db_username}}",
+    "DB_PASSWORD": "{{db_password}}"
+}
+
+### DELETE service
+DELETE {{base_url}}/service/stop/lightner_back
+
+### GET request to a deployed service
+GET {{base_url}}:{{eport}}/user
