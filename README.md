@@ -73,8 +73,17 @@ src/
   │       └── helpers.ts          # Helpers o funciones auxiliares
   │
   ├── main.ts                     # Punto de entrada principal del proyecto
+  │    
+  ├── index.html                  # HTML base del proyecto
+tests/                             # Carpeta para pruebas y validación del código
+  ├── components/                 # Pruebas unitarias para los componentes reutilizables
+  │   └── TextField.test.ts       # Pruebas específicas para el componente TextField
   │
-  └── index.html                  # HTML base del proyecto
+  ├── pages/                      # Pruebas para páginas completas o flujos
+  │   └── RegisterPage.test.ts    # Pruebas para la página de registro
+  │
+  └── utils/                      # Pruebas para funciones auxiliares o helpers
+      └── helpers.test.ts         # Validación de los helpers disponibles
 ```
 ### **Descripción de los Directorios**
 #### 1. **`src/domain/`**
@@ -104,6 +113,32 @@ Aquí se encuentra toda la implementación de la interfaz de usuario (frontend) 
 Archivo principal del proyecto. Este es el punto de entrada donde se inicializa la aplicación, renderizando páginas o vistas según sea necesario.
 #### 6. **`index.html`**
 Archivo HTML base que contiene un contenedor principal (e.g., `<div id="app"></div>`). Todas las vistas se renderizan dinámicamente dentro de este contenedor usando JavaScript.
+#### **`tests/`**
+Esta carpeta contiene las pruebas del proyecto organizadas según los módulos o partes clave que deben verificarse.
+- **`components/`**: Aquí se encuentran las pruebas unitarias para componentes visuales reutilizables, como `TextField` o `Button`.
+- **`pages/`**: Pruebas para validar las páginas completas o flujos del proyecto (como `RegisterPage`).
+- **`utils/`**: Pruebas para funciones auxiliares o helpers
+
+
+## Pruebas
+
+El proyecto incluye pruebas unitarias y de integración realizadas con [Vitest](https://vitest.dev/). Estas pruebas están organizadas en la carpeta `tests` y cubren los siguientes aspectos:
+
+- **components/**: Pruebas para los componentes visuales reutilizables como `TextField` y `Button`.
+- **pages/**: Pruebas específicas para las páginas principales de la aplicación, como `RegisterPage`.
+- **utils/**: Verificación de los helpers o funciones auxiliares, asegurando que su lógica sea consistente.
+
+### Comandos para las Pruebas
+
+- **Ejecutar todas las pruebas:**
+  ```bash
+  npm run test
+  ```
+
+- **Revisar pruebas en tiempo real:**
+  ```bash
+  npm run test:watch
+  ```
 ### **Flujo de Renderizado**
 1. El archivo `main.ts` es el **punto de entrada** del sistema:
     - Importa páginas, componentes y estilos.
@@ -118,3 +153,18 @@ Archivo HTML base que contiene un contenedor principal (e.g., `<div id="app"></d
     - **CSS (`css`)**, que define los estilos globales y específicos.
 
 4. Todo el proyecto sigue principios de **Clean Architecture**, separando responsabilidades entre dominio, aplicación e infraestructura.
+
+### Ejemplo de Pruebas para el Componente `TextField`
+```typescript
+import { TextField } from "../../src/infrastructure/views/components/TextField";
+import { describe, it, expect } from "vitest";
+
+describe("TextField Component", () => {
+  it("debería renderizar correctamente con un label", () => {
+    const textField = TextField({ label: "Nombre" });
+
+    expect(textField.querySelector(".textfield-label")?.textContent).toBe("Nombre");
+    expect(textField.querySelector("input")).not.toBeNull();
+  });
+});
+```
