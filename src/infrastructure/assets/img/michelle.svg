@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="400" height="200">
+    <!-- Text 'MICHELLE' with minimalist enhancements -->
+    <text x="50%" y="50%" font-family="'Roboto', sans-serif" font-size="100" fill="black" font-weight="bold"
+          letter-spacing="5" text-anchor="middle" dominant-baseline="middle">
+        MICHELLE
+    </text>
+    <line x1="17%" y1="60%" x2="66%" y2="60%" stroke="black" stroke-width="4"/>
+    <!-- Curly braces wrapping the text -->
+    <path d="M150,270 Q120,270 120,240 Q120,210 100,210 L100,190 Q120,190 120,160 Q120,130 150,130" stroke="black"
+          stroke-width="4" fill="none"/>
+    <path d="M650,270 Q680,270 680,240 Q680,210 700,210 L700,190 Q680,190 680,160 Q680,130 650,130" stroke="black"
+          stroke-width="4" fill="none"/>
+</svg>
