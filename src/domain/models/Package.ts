@@ -1,14 +1,3 @@
-export class Image {
-    tags: Array<string> = [];
-    constructor(
-        public name: string) {
-    }
-
-    addTag(tag: string): void {
-        this.tags.push(tag);
-    }
-}
-
 // src/domain/models/Package.ts
 export class Package {
     private tags: Array<string> = [];

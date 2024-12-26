@@ -1,5 +1,3 @@
-import {postService} from "./adapters/api/services.service.ts";
-
 export function initializeServicesForm(formElement: HTMLFormElement): void {
     // Helper to update input values
     const updateInputValue = (name: string, value: string): void => {
@@ -36,18 +34,8 @@ export function initializeServicesForm(formElement: HTMLFormElement): void {
         console.log('Creating service:', username, password, connection, image, tag);
 
         try {
-            const params = new URLSearchParams({image, tag, iport: '42001', eport: '42001', priviliged: '0'});
-            
-            // Call createService with form data
-            const response = await postService(params, {
-                DB_URL: connection,
-                DB_USERNAME: username,
-                DB_PASSWORD: password,
-            });
-
+            new URLSearchParams({image, tag, iport: '42001', eport: '42001', priviliged: '0'});
             formElement.reset();
-
-            console.log('Service created successfully:', response);
         } catch (error: unknown) {
             console.error('Error creating service:', (error as Error).message);
         }
