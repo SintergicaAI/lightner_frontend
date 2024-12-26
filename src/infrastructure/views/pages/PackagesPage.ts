@@ -1,5 +1,5 @@
 import servicesTemplate from "../templates/service.html?raw"; // Import the template as text without processing
-import {setupCounter} from "../../../presentation/counter.ts";
+import {setupCounter} from "../components/counter.ts";
 import {initializeServicesForm} from "../../../services.form.ts";
 import {ping} from "../../../adapters/api/ping.ts";
 
