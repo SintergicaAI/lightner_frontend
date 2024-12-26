@@ -1,0 +1,198 @@
+<div class="layout">
+    <aside class="sidebar">
+        <a href="/"><img src="src/infrastructure/assets/img/solarfyhub_isotipo.png" alt="SolarfyHUB"></a>
+        <nav>
+            <a href="/home" class="nav__link"><i class="fas fa-home nav__icon"></i></a>
+            <a href="/reports" class="nav__link"><i class="fas fa-chart-column nav__icon"></i></a>
+            <a href="#services" class="nav__link"><i class="fas fa-money-bill nav__icon"></i></a>
+            <a href="#services" class="nav__link"><i class="fas fa-calendar nav__icon"></i></a>
+            <a href="#about" class="nav__link"><i class="fas fa-solar-panel nav__icon"></i></a>
+            <a href="#contact" class="nav__link"><i class="fas fa-user-group nav__icon"></i></a>
+            <a href="/michelle" class="nav__link"><i class="fas fa-code nav__icon"></i></a>
+        </nav>
+    </aside>
+    <header class="header">
+        <!-- User menu intact -->
+        <div class="user-menu">
+            <div class="user-info">
+                <img src="https://www.gravatar.com/avatar/?d=mp" alt="User"/>
+                <p style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span>María José</span>
+                    <span>Admin</span>
+                </p>
+            </div>
+            <div class="user-dropdown">
+                <a href="#profile">My Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main id="lightner-content" class="content">
+        <header class="content__header">
+            <nav class="breadcrumb">
+                <ul class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Home</a>
+                        <span class="breadcrumb__divider">&rarr;</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Productos</a>
+                        <span class="breadcrumb__divider">&rarr;</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link breadcrumb__link--active">Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <article class="hero">
+            <div class="hero__background"></div> <!-- Background with blur -->
+            <h1 class="hero__title title">¡Hola María!</h1>
+            <p class="hero__body">Cada no es un paso más cerca de un sí </p>
+        </article>
+
+
+        <div class="grid grid--4cols-md-up grid--gap-lg">
+
+            <article class="card">
+                <div class="card__header">
+                    <h2 class="card__title">Title</h2>
+                </div>
+                <div>
+                    <h3 class="card__description">$20.2617</h3>
+                    <small class="card__description">5 nov, 16:48:00 UTC</small>
+                </div>
+                <div class="chip chip--trend-positive">
+                    <i class="fas fa-arrow-up chip__icon"></i>
+                    <span class="chip__text chip--trend-positive">Trending Upward</span>
+                </div>
+            </article>
+            <div class="card">
+                <h3 class="card__title">Sales Report</h3>
+                <p class="card__description">The sales have decreased significantly this month.</p>
+                <div class="chip chip--trend-negative">
+                    <i class="fas fa-arrow-down chip__icon"></i>
+                    <span class="chip__text ">Trending Downward</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card__title">Sales Report</h3>
+                <p class="card__description">The sales have increased significantly this month.</p>
+                <div class="chip chip--trend-positive">
+                    <i class="fas fa-arrow-up chip__icon"></i>
+                    <span class="chip__text chip--trend-positive">Trending Upward</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card__title">Sales Report</h3>
+                <p class="card__description">The sales have increased significantly this month.</p>
+                <div class="chip chip--trend-positive">
+                    <i class="fas fa-arrow-up chip__icon"></i>
+                    <span class="chip__text chip--trend-positive">Trending Upward</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid--3cols-md-up">
+            <div class="card">
+
+            </div>
+            <div class="card">
+                <h3 class="card__title">Recordatorios</h3>
+            </div>
+            <div class="card">
+                <div class="calendar">
+                    <div class="calendar__header">
+                        <i class="fa fa-arrow-left "></i> <b id="current-month" data-month="November">November</b>, <b id="current-year" data-year="2024">2024</b> <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <div class="calendar__body">
+                        <div class="calendar__row calendar__row--header">
+                            <div class="calendar__column">D</div>
+                            <div class="calendar__column">L</div>
+                            <div class="calendar__column">M</div>
+                            <div class="calendar__column">X</div>
+                            <div class="calendar__column">J</div>
+                            <div class="calendar__column">V</div>
+                            <div class="calendar__column">S</div>
+                        </div>
+                        <div class="calendar__row">
+                            <div class="calendar__column calendar__day">1</div>
+                            <div class="calendar__column calendar__day">2</div>
+                            <div class="calendar__column calendar__day">3</div>
+                            <div class="calendar__column calendar__day">4</div>
+                            <div class="calendar__column calendar__day">5</div>
+                            <div class="calendar__column calendar__day">6</div>
+                            <div class="calendar__column calendar__day">7</div>
+                        </div>
+                        <div class="calendar__row">
+                            <div class="calendar__column calendar__day">8</div>
+                            <div class="calendar__column calendar__day">9</div>
+                            <div class="calendar__column calendar__day">10</div>
+                            <div class="calendar__column calendar__day">11</div>
+                            <div class="calendar__column calendar__day">12</div>
+                            <div class="calendar__column calendar__day">13</div>
+                            <div class="calendar__column calendar__day">14</div>
+                        </div>
+                        <div class="calendar__row">
+                            <div class="calendar__column calendar__day">15</div>
+                            <div class="calendar__column calendar__day">16</div>
+                            <div class="calendar__column calendar__day">17</div>
+                            <div class="calendar__column calendar__day">18</div>
+                            <div class="calendar__column calendar__day">19</div>
+                            <div class="calendar__column calendar__day">20</div>
+                            <div class="calendar__column calendar__day">21</div>
+                        </div>
+                        <div class="calendar__row">
+                            <div class="calendar__column calendar__day">22</div>
+                            <div class="calendar__column calendar__day">23</div>
+                            <div class="calendar__column calendar__day">24</div>
+                            <div class="calendar__column calendar__day">25</div>
+                            <div class="calendar__column calendar__day">26</div>
+                            <div class="calendar__column calendar__day">27</div>
+                            <div class="calendar__column calendar__day">28</div>
+                        </div>
+                        <div class="calendar__row">
+                            <div class="calendar__column calendar__day">29</div>
+                            <div class="calendar__column calendar__day">30</div>
+                            <div class="calendar__column"></div>
+                            <div class="calendar__column"></div>
+                            <div class="calendar__column"></div>
+                            <div class="calendar__column"></div>
+                            <div class="calendar__column"></div>
+                        </div>
+                    </div>
+
+                    <p id="selectedDate"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="chip chip--primary">
+                <span class="chip__text">Primary</span>
+                <button class="chip__button">&times;</button>
+            </div>
+
+            <div class="chip chip--secondary">
+                <span class="chip__text">Secondary</span>
+                <button class="chip__button">&times;</button>
+            </div>
+
+            <div class="chip chip--success">
+                <span class="chip__text">Success</span>
+                <button class="chip__button">&times;</button>
+            </div>
+        </div>
+
+
+        <article class="card">
+            <h2>Card Title</h2>
+            <p>This is a simple card with text to show you how cards look like. You can place any content here such as
+                text, images, lists, etc.</p>
+        </article>
+
+    </main>
+</div>

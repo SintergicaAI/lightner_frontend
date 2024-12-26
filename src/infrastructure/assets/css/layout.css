@@ -1,0 +1,72 @@
+.grid {
+    display: grid;
+    padding: 20px;
+    gap: 20px; /* Definición estándar del espaciado entre elementos del grid */
+}
+
+/* Modificadores de gap */
+.grid--gap-sm {
+    gap: 10px;
+}
+
+.grid--gap-md {
+    gap: 20px;
+}
+
+/* Esta es redundante si es el valor por defecto */
+.grid--gap-lg {
+    gap: 30px;
+}
+
+/* Alineación de items dentro de las celdas de grid */
+.grid--align-center {
+    align-items: center;
+    justify-items: center;
+}
+
+.grid--align-start {
+    align-items: start;
+    justify-items: start;
+}
+
+.grid--align-end {
+    align-items: end;
+    justify-items: end;
+}
+
+.grid--1col {
+    grid-template-columns: 1fr;
+}
+
+.grid--2cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+@media (min-width: 768px) {
+    .grid--2cols-sm-up {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--3cols-sm-up {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .grid--3cols-md-up {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--4cols-md-up {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

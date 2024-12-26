@@ -4,10 +4,10 @@ import {initializeServicesForm} from "../../../services.form.ts";
 import {ping} from "../../../adapters/api/ping.ts";
 
 
-export function ServicesPage(): void {
+export function PackagesPage(): void {
 
-    const app = document.getElementById("app");
-    if (!app) throw new Error("Elemento 'app' no encontrado");
+    const app = document.getElementById("lightner-content");
+    if (!app) throw new Error("Elemento 'app' no encontrado")
     app.innerHTML = servicesTemplate;
     setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
