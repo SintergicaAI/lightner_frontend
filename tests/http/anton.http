@@ -1,8 +1,8 @@
 ### GET request to example server
-GET {{base_url}}/service
+GET {{base_url}}:42000/service
 
 ### UP service
-POST {{base_url}}/service/lightner_back?image={{image}}&tag={{tag}}&iport={{iport}}&eport={{eport}}&privileged=0
+POST {{base_url}}:42000/service/lightner_back?image={{image}}&tag={{tag}}&iport={{iport}}&eport={{eport}}&privileged=0
 Content-Type: application/json
 
 {

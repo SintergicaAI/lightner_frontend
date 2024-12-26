@@ -48,8 +48,6 @@ Configurar las variables de entorno:
 src/
   ├── domain/                     # Lógica y reglas de negocio (Domino puro)
   │
-  ├── application/                # Casos de uso y lógica de aplicación
-  │
   ├── adapters/                   # Adaptadores hacia APIs, almacenamiento, etc.
   │
   ├── infrastructure/             # Infraestructura (lógica visual y otros componentes relacionados)
