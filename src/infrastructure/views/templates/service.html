@@ -5,28 +5,39 @@
         </div>
         <form id="form" class="form ">
             <div class="form form__group">
-                <label for="image" class="form__label">Image:</label>
-                <input type="text" id="image" class="form__input" name="image">
-                <div class="form__select-wrapper">
-                    <label for="tags" class="form__label">Tag:</label>
-                    <label for="autocomplete-input"></label><input type="text" class="form__input" id="autocomplete-input" name="tag" list="tags" placeholder="Escribe para buscarrrr...">
-                    <datalist id="tags">
-                        <option value="latest"></option>
-                        <option value="v1"></option>
-                        <option value="v2"></option>
-                        <option value="feature"></option>
-                        <option value="v3"></option>
-                    </datalist>
-                </div>
+                <fieldset class="form form__group">
+                    <legend>Package</legend>
+                    <label for="package_name" class="form__label">Name:</label>
+                    <input type="text" id="package_name" class="form__input" name="package_name" placeholder="Seleccione un paquete">
+                    <div class="form__select-wrapper">
+                        <label for="tags" class="form__label">Tag:</label>
+                        <label for="autocomplete-input"></label><input type="text" class="form__input" id="autocomplete-input" name="tag" list="tags" placeholder="Seleccione una etiqueta">
+                        <datalist id="tags">
+                            <option value="latest"></option>
+                            <option value="v1"></option>
+                            <option value="v2"></option>
+                            <option value="feature"></option>
+                            <option value="v3"></option>
+                        </datalist>
+                    </div>
+                </fieldset>
             </div>
             <hr>
             <div class="form form__group">
-                <label for="db_connection" class="form__label">Database string connection:</label>
-                <input id="db_connection" type="text" class="form__input" name="db_connection" placeholder="Database string connection">
-                <label for="db_username" class="form__label">Username:</label>
-                <input id="db_username" type="text" class="form__input" name="db_username" placeholder="Database username">
-                <label for="db_password" class="form__label">Password:</label>
-                <input id="db_password" type="password" class="form__input" name="db_password">
+                <fieldset class="form form__group">
+                    <legend>Configuration</legend>
+                    <label for="db_connection" class="form__label">Database string connection:</label>
+                    <input id="db_connection" type="text" class="form__input" name="db_connection" placeholder="Database string connection">
+                    <label for="db_username" class="form__label">Username:</label>
+                    <input id="db_username" type="text" class="form__input" name="db_username" placeholder="Database username">
+                    <label for="db_password" class="form__label">Password:</label>
+                    <input id="db_password" type="password" class="form__input" name="db_password">
+
+                    <label for="pkg_external_port" class="form__label">External port</label>
+                    <input id="pkg_external_port" type="text" class="form__input" name="pkg_external_port" placeholder="Ej: 42001, 42002, etc.">
+                    <label for="pkg_internal_port" class="form__label">Internal port</label>
+                    <input id="pkg_internal_port" type="text" class="form__input" name="pkg_internal_port" placeholder="Ej: 42001, 42002, etc.">
+                </fieldset>
             </div>
             <button style="background-color: #242424; color: #f9f9f9" type="submit" >Enviar</button>
             <button id="counter" type="button"></button>

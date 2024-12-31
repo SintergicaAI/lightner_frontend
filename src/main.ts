@@ -10,36 +10,37 @@ import {PackagesPage} from "./infrastructure/views/pages/PackagesPage.ts";
 import {HomePage} from "./infrastructure/views/pages/HomePage.ts";
 import mainLayout from './infrastructure/views/layouts/main.layout.html?raw'
 import notFoundPage from './infrastructure/views/pages/NotFoundPage.html?raw'
+import {renderRoute} from "./infrastructure/routing/routes.ts";
 
 
-const renderPage = () => {
-
-    const app = document.querySelector('#app')
-
-    if (!app) throw new Error("Could not find the app")
-    const path = window.location.pathname;
-    if (path === "/register") {
-        RegisterPage();
-    } else if (path === "/michelle") {
-        window.document.title = "Michelle";
-        app.innerHTML = mainLayout;
-        PackagesPage();
-    } else if (path === "/home") {
-        if (!app) throw new Error("Elemento 'app' no encontrado");
-        window.document.title = "Home";
-        app.innerHTML = mainLayout;
-    } else if (path === "/") {
-        HomePage();
-    } else {
-        //Not found page
-        app.innerHTML = notFoundPage;
-    }
-};
+// const renderPage = () => {
+//
+//     const app = document.querySelector('#app')
+//
+//     if (!app) throw new Error("Could not find the app")
+//     const path = window.location.pathname;
+//     if (path === "/register") {
+//         RegisterPage();
+//     } else if (path === "/michelle") {
+//         window.document.title = "Michelle";
+//         app.innerHTML = mainLayout;
+//         PackagesPage();
+//     } else if (path === "/home") {
+//         if (!app) throw new Error("Elemento 'app' no encontrado");
+//         window.document.title = "Home";
+//         app.innerHTML = mainLayout;
+//     } else if (path === "/") {
+//         HomePage();
+//     } else {
+//         //Not found page
+//         app.innerHTML = notFoundPage;
+//     }
+// };
 document.addEventListener("DOMContentLoaded", () => {
 
 
-    window.addEventListener("popstate", renderPage);
-    renderPage();
+    window.addEventListener("popstate", renderRoute);
+    renderRoute();
 
     const days = document.querySelectorAll<HTMLDivElement>('.calendar__day');
 
