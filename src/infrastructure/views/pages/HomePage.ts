@@ -1,5 +1,8 @@
 import homeTemplate from "../templates/home.html?raw";
 import {Sidebar} from "../components/Sidebar.ts";
+import {Calendar} from "../components/Calendar.ts";
+import {initializeCalendar} from "../components/initializeCalendar.ts";
+
 
 
 export function HomePage(): void {
@@ -20,4 +23,6 @@ export function HomePage(): void {
     if (sidebarButton) {
         sidebarButton.addEventListener('click', toggleSidebar);
     }
+    document.addEventListener('DOMContentLoaded', initializeCalendar);
+
 }
