@@ -6,21 +6,19 @@ body, html {
 
     font-family: 'Gilroy', sans-serif;
     color: #6F6F6F;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
 .layout {
     display: flex;
-    flex-direction: row;
     height: 100vh;
+
 }
 
 .sidebar {
-    background-color: #1B243D;
-    width: 100px;
+    background-color: var(--accent-bg-color);
+    width: 80px;
     height: 100%;
-    position: fixed;
-    z-index: 500;
     color: white;
     display: flex;
     flex-direction: column;
@@ -28,17 +26,47 @@ body, html {
     padding-top: 20px;
 }
 
+.sidebar__toggle, .header__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--textfield-primary-label);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.expanded {
+    width: 250px; /* Ancho expandido de la sidebar */
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #19274e;
+    height: 100vh;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar__toggle, .header__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.expanded {
+    width: 250px; /* Ancho expandido de la sidebar */
+}
+
+
 .header {
     background-color: #ffffff;
-    width: calc(100% - 100px);
-    margin-left: 100px;
+
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -50,33 +78,33 @@ body, html {
 }
 
 .content {
+    flex: 1; /* Ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;
+
     background-color: #F4F4F4;
-    margin-left: 100px;
-    padding: 20px;
-    padding-top: 60px;
-    width: calc(100% - 100px);
-    position: relative;
-    top: 150px;
-    z-index: 50;
     overflow-y: auto;
-    height: calc(100vh - 60px);
+    height: 100%;
 }
 
 .content__header {
     background-color: #ffffff;
-    width: calc(100% - 100px);
-    margin-left: 100px;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
+
     z-index: 100;
-    top: 100px;
+    top: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
+}
+
+.content__main {
+    flex: 1; /* Ocupa el espacio restante debajo de la cabecera */
+    overflow-y: auto; /* Permite scroll si el contenido es demasiado grande */
 }
 .nav__link {
     color: white;
@@ -152,59 +180,79 @@ body, html {
     display: block;
 }
 
-.hero {
+user-info__content {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.dashboard__hero {
     position: relative;
+    border-radius: 8px;
+    color: white;
+    height: 150px;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    text-align: start;
-    flex-wrap: wrap;
-    height: 200px;
-    color: white;
-    overflow: hidden;
-    border-radius: 8px;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
 }
 
-.hero__background {
-    background-image: url('src/infrastructure/assets/img/paneles_solares.jpg');
-    background-size: cover;
-    background-position: center;
+.dashboard__hero::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(3px);
-    z-index: -1;
+    background-image: url('@/infrastructure/assets/img/paneles_solares.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7) blur(2px); /* Aplica tonalidad y borrosidad */
+    z-index: 1;
 }
 
-.hero__title {
-    background: rgba(0, 0, 0, 0);
-    padding: 0 20px;
-    width: 100%;
-    border-radius: 10px;
+.dashboard__hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 10px;
 }
 
-.hero__body {
-    background: rgba(0, 0, 0, 0);
-    padding: 0 20px;
+.dashboard__hero-title {
+    font-size: 24px;
+    margin: 0;
 }
 
+.dashboard__hero-subtitle {
+    font-size: 16px;
+    margin: 5px 0 0;
+}
 
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
         padding-top: 0;
+        transform: translateX(-100%);
+        position: absolute;
+        z-index: 100;
+    }
+    .sidebar.expanded {
+        transform: translateX(0);
+    }
+    .header__hamburger {
+        display: block;
     }
 
+    .sidebar {
+        transform: translateX(-100%);
+        position: absolute;
+        z-index: 100;
+    }
+    .sidebar.expanded {
+        transform: translateX(0);
+    }
+    .header__hamburger {
+        display: block;
+    }
     .header {
         width: 100%;
         margin-left: 0;
-    }
-
-    .content {
-        margin-left: 0;
-        width: 100%;
-        padding-top: 60px;
     }
 }

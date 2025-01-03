@@ -6,7 +6,7 @@ import {Calendar} from "../components/Calendar.ts";
 
 
 const initializeCalendar = () => {
-    const app = document.querySelector('#app');
+    const app = document.querySelector('#lightner-content');
 
     if (!app) {
         throw new Error("No se encontró el contenedor '#app'");
@@ -20,6 +20,8 @@ const initializeCalendar = () => {
     const calendar = Calendar(daysInMonth, currentMonth, currentYear);
     app.appendChild(calendar);
 }
+
+
 
 export function PackagesPage(): void {
 

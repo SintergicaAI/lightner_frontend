@@ -21,6 +21,8 @@
     --text-error-active: #af2626;
 
     --active-color: #00CAE6;
+
+    --accent-bg-color: #1B243D;
 }
 
 *,
@@ -107,19 +109,6 @@ body, html {
     width: auto;
     height: 660px;
     z-index: -1;
-}
-
-.hero {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: start;
-    flex-wrap: wrap;
-    height: 200px;
-    color: white;
-    overflow: hidden;
-    border-radius: 8px;
 }
 
 .hero__background {

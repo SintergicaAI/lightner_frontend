@@ -1,8 +1,15 @@
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
-
+import path from 'path';
+import { reactRouter } from "@react-router/dev/vite"
 // Exporta la configuración usando la función `defineConfig`
 export default defineConfig({
+    plugins: [reactRouter()],
+    resolve: {
+      alias: {
+          "@": path.resolve(__dirname, "./src"),
+      }
+    },
     server: {
         port: 3000, // Cambia si necesitas otro puerto
     },

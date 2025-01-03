@@ -14,7 +14,7 @@ const routes: Route[] = [
     { path: "/register", component: RegisterPage, layout: 'main.layout.html'},
     { path: "/michelle", component: PackagesPage, layout: 'main.layout.html'},
     { path: "/home", component: HomePage, layout: 'main.layout.html'},
-    { path: "/", component: HomePage },
+    { path: "/dashboard", layout: 'main.layout.html'},
 ];
 
 export const renderRoute = () => {
@@ -26,7 +26,8 @@ export const renderRoute = () => {
 
     if (route) {
         app.innerHTML = mainLayout
-        initializeCalendar()
+        route.component();
+        initializeCalendar();
     } else {
         app.innerHTML = notFoundPage; // Manejo de página no encontrada
     }

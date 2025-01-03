@@ -2,9 +2,17 @@
     <header>
         <h1>Home</h1>
     </header>
-    <aside id="Sidebar"></aside>
+    <aside id="Sidebar" class="sidebar-home">
+        <nav class="sidebar__nav">
+            <ul class="sidebar__menu">
+                <li class="sidebar__item"><a class="sidebar__link" href="/register">Register</a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="/packages">Packages</a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="/">Home</a></li>
+            </ul>
+        </nav>
+    </aside>
     <main>
         <p>Welcome to the homepage!</p>
-        <button class="sidebar-toggle">Learn More</button>
+        <button id="sidebar-toggle" class="sidebar-toggle">Learn More</button>
     </main>
 </div>

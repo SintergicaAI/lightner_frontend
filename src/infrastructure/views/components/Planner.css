@@ -1,0 +1,177 @@
+:root {
+    /* Paleta de colores */
+    --color-white: #fff;
+    --color-primary: #007bff;
+    --color-secondary: #f8f9fa;
+    --color-grey-light: #f1f3f5;
+    --color-grey-border: #ddd;
+    --color-success: #28a745;
+
+    /* Sombras y bordes */
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+
+    /* Espaciado */
+    --spacing-small: 5px;
+    --spacing-medium: 10px;
+    --spacing-large: 20px;
+
+    /* Tipografía */
+    --font-size-small: 12px;
+    --font-size-medium: 18px;
+    --font-weight-bold: bold;
+}
+
+.calendar {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.calendar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-medium) var(--spacing-large);
+    background-color: var(--color-secondary);
+}
+
+.calendar__nav {
+    display: flex;
+    align-items: center;
+}
+
+.calendar__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 var(--spacing-medium);
+    font-size: var(--font-size-medium);
+}
+
+.calendar__title {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+}
+
+.calendar__view {
+    display: flex;
+    gap: var(--spacing-medium);
+}
+
+.calendar__day {
+    padding: var(--spacing-medium);
+    border: 1px solid var(--color-grey-border);
+    min-height: 80px;
+}
+
+.calendar__day:nth-child(7n){
+    border-right: none;
+
+}
+
+.calendar__day:nth-child(7n+1){
+    border-left: none;
+}
+
+.calendar__day:nth-child(-n+7) {
+    border-top: none; /* Quita el borde superior de la primera fila */
+}
+
+.calendar__day:nth-last-child(-n+7) {
+    border-bottom: none; /* Quita el borde inferior de la última fila */
+}
+.calendar__task, .calendar__reminder {
+    font-size: var(--font-size-small);
+}
+
+/* Desktop Styles */
+.calendar--desktop .calendar__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: var(--spacing-medium);
+}
+
+/* Mobile Styles */
+.calendar--mobile .calendar__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-medium);
+}
+
+.calendar--mobile .calendar__list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-grey-border);
+    padding: var(--spacing-medium);
+}
+
+/* Estilos comunes */
+.calendar {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* ------------ */
+/* Versión Desktop */
+.calendar--desktop .calendar__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar--desktop .calendar__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--color-grey-light);
+    text-align: center;
+    padding: var(--spacing-medium) 0;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ------------ */
+/* Estilos móviles (compactos) */
+.calendar--mobile .calendar__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-medium);
+}
+
+.calendar--mobile .calendar__list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-bottom: 1px solid var(--color-grey-border);
+}
+
+.calendar--mobile .calendar__date {
+    font-weight: var(--font-weight-bold);
+}
+
+.calendar__task {
+    color: var(--color-success);
+    font-size: var(--font-size-small);
+}
+
+.calendar__reminder {
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
+}
+
+.calendar__day--highlight {
+    background-color: #e0e0e0;
+}
+
+.calendar__day--today {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: var(--spacing-small);
+    position: absolute;
+    top: var(--spacing-medium);
+    left: var(--spacing-medium);
+}

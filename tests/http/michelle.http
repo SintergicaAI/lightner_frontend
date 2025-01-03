@@ -2,3 +2,19 @@
 GET {{michelle_url}}/server
 
 ###
+
+POST http://24.199.72.114:42000/service/turing?image={{image}}&tag=0.0.2&iport=8080&eport=80&privileged=0&evol={{evol}}&ivol={{ivol}}
+Authorization: Basic dcqb8LZ3GsW7tau
+Content-Type: application/json
+
+{
+  "OPENAI_API_BASE_URLS": "https://api.openai.com/v1",
+  "OPENAI_API_KEYS": "{{api_keys}}",
+  "WEBUI_NAME":"Turing",
+  "ENABLE_OLLAMA_API":false
+}
+
+###
+
+DELETE http://24.199.72.114:42000/service/turing
+Authorization: Basic dcqb8LZ3GsW7tau

@@ -26,3 +26,4 @@ dist-ssr
 
 .env
 /http-client.private.env.json
+/.react-router/

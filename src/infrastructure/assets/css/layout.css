@@ -2,9 +2,15 @@
     display: grid;
     padding: 20px;
     gap: 20px; /* Definición estándar del espaciado entre elementos del grid */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte las dimensiones */
 }
 
 /* Modificadores de gap */
+.grid--gap-xs {
+    gap: 5px;
+}
+
 .grid--gap-sm {
     gap: 10px;
 }
@@ -13,9 +19,12 @@
     gap: 20px;
 }
 
-/* Esta es redundante si es el valor por defecto */
 .grid--gap-lg {
     gap: 30px;
+}
+
+.grid--gap-xl {
+    gap: 40px;
 }
 
 /* Alineación de items dentro de las celdas de grid */
@@ -34,6 +43,12 @@
     justify-items: end;
 }
 
+.grid--align-stretch {
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+/* Definición de columnas */
 .grid--1col {
     grid-template-columns: 1fr;
 }
@@ -50,8 +65,45 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5cols {
+    grid-template-columns: repeat(5, 1fr);
+}
 
-@media (min-width: 768px) {
+.grid--6cols {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* Span de columnas y filas */
+.grid--span-2 {
+    grid-column: span 2;
+}
+
+.grid--span-3 {
+    grid-column: span 3;
+}
+
+.grid--span-4 {
+    grid-column: span 4;
+}
+
+.grid--row-span-2 {
+    grid-row: span 2;
+}
+
+.grid--row-span-3 {
+    grid-row: span 3;
+}
+
+.grid--row-span-4 {
+    grid-row: span 4;
+}
+
+/* Nuevos breakpoints para mayor flexibilidad */
+@media (min-width: 576px) {
+    .grid--1col-sm-up {
+        grid-template-columns: 1fr;
+    }
+
     .grid--2cols-sm-up {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -61,12 +113,40 @@
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+    .grid--2cols-md-up {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .grid--3cols-md-up {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .grid--4cols-md-up {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .grid--3cols-lg-up {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--4cols-lg-up {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid--5cols-lg-up {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid--4cols-xl-up {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid--6cols-xl-up {
+        grid-template-columns: repeat(6, 1fr);
     }
 }
